@@ -7,7 +7,7 @@ namespace ExamTwo.Services
         Dictionary<string, int> GetCoffees();
         Dictionary<string, int> GetCoffeePrices();
         Dictionary<int, int> GetCoinInventory();
-        string BuyCoffee(OrderRequest request);
+        PurchaseResult BuyCoffee(OrderRequest request);
     }
 
 }

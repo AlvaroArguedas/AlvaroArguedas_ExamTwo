@@ -21,13 +21,16 @@ namespace ExamTwo.Controllers
         [HttpGet("getCoffeePricesInCents")]
         public IActionResult GetPrices() => Ok(_service.GetCoffeePrices());
 
-        [HttpGet("getQuantity")]
+        [HttpGet("getQuantityCoins")]
         public IActionResult GetCoinInventory() => Ok(_service.GetCoinInventory());
 
         [HttpPost("buyCoffee")]
         public IActionResult BuyCoffee([FromBody] OrderRequest request)
         {
             var result = _service.BuyCoffee(request);
+            if(!result.Success)
+                return BadRequest(result);
+
             return Ok(result);
         }
     }

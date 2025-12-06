@@ -1,11 +1,10 @@
-﻿using ExamTwo.Controllers;
-
-namespace ExamTwo.Models
+﻿namespace ExamTwo.Models
 {
     public class OrderRequest
     {
-        public Dictionary<string, int> Order { get; set; }
-        public Payment Payment { get; set; }
+        public List<OrderItem> Items { get; set; } = new List<OrderItem>();
+
+        public Payment Payment { get; set; } = new Payment();
     }
 
 }
